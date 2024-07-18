@@ -3,30 +3,91 @@ import TabComponent from './components/TabComponent.vue';
 import Main from './components/MainPage.vue';
 import Favorites from './components/FavoritesPage.vue';
 import FilterComponent from './components/FilterComponent.vue';
+import PageCardComponent from './components/PageCardsComponent.vue';
 
 const thisTabItems = {
   Main,
   Favorites
-}
+};
+
+
+const mock_data  = [
+    {
+        title: "title-1",
+        details: "details-1details-1 details-1 details-1details-1  details-1 details-1 details-1 details-1 details-1 details-1  details-1  details-1details-1details-1  details-1   details-1    details-1   details-1 details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    },
+    {
+        title: "title-1",
+        details: "details-1",
+        gradient: "gradient-1"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2"
+    }
+]
 
 </script>
 
 <template>
-  <TabComponent :tabItems="thisTabItems"/>
   <FilterComponent/>
+  <TabComponent :tabItems="thisTabItems"/>
+  <PageCardComponent :cardsContent="mock_data"></PageCardComponent>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
