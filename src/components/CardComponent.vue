@@ -21,7 +21,7 @@ defineProps<{
     </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 
 .card-wrapper {
     padding: 1rem;
@@ -64,6 +64,9 @@ defineProps<{
     border: 2px solid black;
     margin: 0.2rem;
     height: 40%;
+    &&:hover{
+        background-color: red;
+    }
 }
 
 </style>
