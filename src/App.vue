@@ -2,6 +2,7 @@
 import TabComponent from './components/TabComponent.vue';
 import Main from './components/MainPage.vue';
 import Favorites from './components/FavoritesPage.vue';
+import FilterComponent from './components/FilterComponent.vue';
 
 const thisTabItems = {
   Main,
@@ -12,6 +13,7 @@ const thisTabItems = {
 
 <template>
   <TabComponent :tabItems="thisTabItems"/>
+  <FilterComponent/>
 </template>
 
 <style scoped>
