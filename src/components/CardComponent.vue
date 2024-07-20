@@ -1,16 +1,32 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 
-defineProps<{
+
+
+const props = defineProps<{
     title?: string,
     details?: string,
     gradient?: string,
+    relevance?: "s" | "m" | "l" | "xl" | "bar",
 
 }>()
+
+const sizeMap = {
+    s: { cardWidth: 210, cardHeight: 498 },
+    m: { cardWidth: 424, cardHeight: 498 },
+    l: { cardWidth: 852, cardHeight: 498 },
+    xl: { cardWidth: 1066, cardHeight: 498 },
+    bar: { cardWidth: 1280, cardHeight: 105 },
+};
+
+const cardSize = computed(() => {
+    return props.relevance ? sizeMap[props.relevance] : { cardWidth: 210, cardHeight: 210 };
+});
 
 </script>
 
 <template>
-    <div class="card-wrapper">
+    <div class="card-wrapper" :style="{ width: `${cardSize.cardWidth}px`, height: `${cardSize.cardHeight}px` }">     
         <div class="card-header">
             <h2 class="card-title">{{ title }}</h2>
             <button class="card-edit-btn">Edit</button>
@@ -23,20 +39,30 @@ defineProps<{
 
 <style scoped lang="scss">
 
+// tre størrelser
+// alle sørger for at man fyller 1280px
+// 210 x 210
+// 854 x 498
+// 424 x 498
+// 1069 x 430
+
+// 1280 x 105
+
+// blokker: 1280 x 638
+
+
+
+
+
 .card-wrapper {
-    padding: 1rem;
-    box-shadow: 0 0 5px 2px rgba(134, 134, 134, 0.15);
-    width: 250px;
-    height: 300px;
-    max-height: 600px;
-    background-color: darkslategray;
-    border-radius: 0.15rem;
+    background-color: #1d1b1e;
+
 }
 
 .card-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -45,7 +71,6 @@ defineProps<{
     background-color: rgb(255, 166, 0);
     color: black;
     border: none;
-    border-radius: 0.25rem;
     cursor: pointer;
 }
 
@@ -55,18 +80,13 @@ defineProps<{
 }
 
 .card-details {
-    border: 2px solid black;
     height: 40%;
     overflow: hidden;
 }
 
-.card-gradient{
-    border: 2px solid black;
+.card-gradient {
     margin: 0.2rem;
     height: 40%;
-    &&:hover{
-        background-color: red;
-    }
 }
 
 </style>

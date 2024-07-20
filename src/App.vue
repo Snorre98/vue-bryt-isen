@@ -14,80 +14,68 @@ const thisTabItems = {
 const mock_data  = [
     {
         title: "title-1",
-        details: "details-1details-1 details-1 details-1details-1  details-1 details-1 details-1 details-1 details-1 details-1  details-1  details-1details-1details-1  details-1   details-1    details-1   details-1 details-1",
-        gradient: "gradient-1"
+        details: "details-1",
+        gradient: "gradient-1",
+        relevance: "l"
     },
     {
         title: "title-2",
         details: "details-2",
-        gradient: "gradient-2"
+        gradient: "gradient-2",
+        relevance: "m"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2",
+        relevance: "l"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2",
+        relevance: "s"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2",
+        relevance: "s"
+    },
+    {
+        title: "title-2",
+        details: "details-2",
+        gradient: "gradient-2",
+        relevance: "bar"
     },
     {
         title: "title-1",
         details: "details-1",
-        gradient: "gradient-1"
+        gradient: "gradient-1",
+        relevance: "xl"
     },
     {
         title: "title-2",
         details: "details-2",
-        gradient: "gradient-2"
+        gradient: "gradient-2",
+        relevance: "s"
     },
-    {
-        title: "title-1",
-        details: "details-1",
-        gradient: "gradient-1"
-    },
-    {
-        title: "title-2",
-        details: "details-2",
-        gradient: "gradient-2"
-    },
-    {
-        title: "title-1",
-        details: "details-1",
-        gradient: "gradient-1"
-    },
-    {
-        title: "title-2",
-        details: "details-2",
-        gradient: "gradient-2"
-    },
-    {
-        title: "title-1",
-        details: "details-1",
-        gradient: "gradient-1"
-    },
-    {
-        title: "title-2",
-        details: "details-2",
-        gradient: "gradient-2"
-    },
-    {
-        title: "title-1",
-        details: "details-1",
-        gradient: "gradient-1"
-    },
-    {
-        title: "title-2",
-        details: "details-2",
-        gradient: "gradient-2"
-    },
-    {
-        title: "title-1",
-        details: "details-1",
-        gradient: "gradient-1"
-    },
-    {
-        title: "title-2",
-        details: "details-2",
-        gradient: "gradient-2"
-    }
+   
 ]
 
 </script>
 
 <template>
-  <FilterComponent/>
-  <TabComponent :tabItems="thisTabItems"/>
-  <PageCardComponent :cardsContent="mock_data"></PageCardComponent>
+    <div class="page-wrapper">
+        <FilterComponent/>
+        <TabComponent :tabItems="thisTabItems"/>
+        <PageCardComponent :cardsContent="mock_data"></PageCardComponent>
+    </div>
 </template>
+
+<style scoped lang="scss">
+
+.page-wrapper {
+    width: 100%;
+}
+</style>

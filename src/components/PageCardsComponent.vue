@@ -6,6 +6,7 @@ interface cardContent {
     title?: string,
     details?: string,
     gradient?: string,
+    relevance?: "s" | "m" | "l" | "xl" | "bar",
 }
 
 defineProps<{cardsContent: cardContent[]}>()
@@ -13,27 +14,29 @@ defineProps<{cardsContent: cardContent[]}>()
 
 </script>
 
+
 <template>
     <div class="cards-wrapper">
-        <div v-for="item in cardsContent">
+   
             <CardComponent 
-            :title="item.title" 
-            :details="item.details" 
-            :gradient="item.gradient"/>
-        </div>
+                v-for="item in cardsContent" :key="item.title"
+                :title="item.title"
+                :details="item.details" 
+                :gradient="item.gradient"
+                :relevance="item.relevance"
+            />
+     
     </div>
 </template>
-
 <style scoped>
 
 .cards-wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1280px;
-    max-height: 1080px;
+    width: 1280px;
+    height: fit-content;
+    background-color: #fbead2;
+    gap: 4px;
 }
 
 </style>
